@@ -15,6 +15,7 @@ const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes: [
+    { path: '/', redirect: '/actividades' },
     { path: '/actividades', component: Activities },
     { path: '/actividades/:id',name:'activity-content', component: ActivityContent, props: true },
     { path: '/:pathMatch(.*)*', component: Error404 }
