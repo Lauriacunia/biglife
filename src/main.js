@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 import Activities from './views/Activities.vue';
 import ActivityContent from './views/ActivityContent.vue';
 import Error404 from './views/Error404.vue';
+import vuetify from './plugins/vuetify'
 
 
 const router = new VueRouter({
@@ -24,7 +25,8 @@ const router = new VueRouter({
 
 new Vue({
   router,
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')
 
 
