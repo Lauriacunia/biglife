@@ -1,24 +1,23 @@
 <template>
-  <div>
-    <h1>Consultar Datos</h1>
-    <v-btn depressed v-on:click="fetch">
-      Consultar
-    </v-btn>
+  <v-app>
+    <v-content>
+      <v-container grid-list-sm>
+        <v-layout row wrap>
+          <ActivityCard
+            v-for="character of characters"
+            v-bind:key="character.id"
+            v-bind:character="character"
+          />
+        </v-layout>
 
-    <div>
-      <ActivityCard
-        v-for="character of characters"
-        v-bind:key="character.id"
-        v-bind:character="character"
-      />
-    </div>
-
-    <Paginator
-      :page="page"
-      :pages="pages"
-      @handlePageChange="handlePageChange"
-    />
-  </div>
+        <Paginator
+          :page="page"
+          :pages="pages"
+          @handlePageChange="handlePageChange"
+        />
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
