@@ -4,7 +4,7 @@
       v-model="page"
       :length="pages"
       :total-visible="8"
-      color="purple"
+      color="#FF6C5E"
       @input="handlePageChange"
       circle
     ></v-pagination>
