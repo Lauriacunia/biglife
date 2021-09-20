@@ -11,18 +11,18 @@
     <v-img
       width="369"
       height="240"
-      v-bind:src="character.image"
-      v-bind:alt="character.name"
+      v-bind:src="activity_data_json.image[0]"
+      v-bind:alt="activity.title"
     ></v-img>
 
-    <TitleActivityCard v-bind:character="character" />
+    <TitleActivityCard v-bind:activity="activity" />
 
     <v-card-text>
-      <LocationActivityCard v-bind:character="character" />
+      <LocationActivityCard v-bind:activity="activity_data_json" />
 
-      <DescriptionActivityCard v-bind:character="character" />
+      <DescriptionActivityCard v-bind:activity="activity_data_json" />
 
-      <PointsActivityCard v-bind:character="character" />
+      <PointsActivityCard v-bind:activity="activity" />
     </v-card-text>
   </v-card>
 </template>
@@ -35,12 +35,22 @@ import PointsActivityCard from "../components/PointsActivityCard.vue";
 
 export default {
   name: "ActivityCard",
-  props: ["character"],
+  props: ["activity"],
   components: {
     TitleActivityCard,
     LocationActivityCard,
     DescriptionActivityCard,
     PointsActivityCard,
+  },
+  data() {
+    return {
+      activity_data_json: {},
+    };
+  },
+
+  created() {
+    this.activity_data_json = JSON.parse(this.activity.activity);
+    console.log(this.activity_data_json);
   },
 };
 </script>

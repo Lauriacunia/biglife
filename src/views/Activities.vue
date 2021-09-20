@@ -4,9 +4,9 @@
       <v-container grid-list-sm>
         <v-layout row wrap>
           <ActivityCard
-            v-for="character of characters"
-            v-bind:key="character.id"
-            v-bind:character="character"
+            v-for="activity of activities"
+            v-bind:key="activity.id"
+            v-bind:activity="activity"
           />
         </v-layout>
 
@@ -33,9 +33,9 @@ export default {
   },
   data() {
     return {
-      characters: [],
+      activities: [],
       page: 1,
-      pages: 1,
+      pages: 213,
     };
   },
   created() {
@@ -44,16 +44,18 @@ export default {
 
   methods: {
     fetch() {
+      const BASE_URL = "https://json-biglifeapp.herokuapp.com";
+      const path = `/activity`;
+      const url = `${BASE_URL}${path}`;
       const params = {
-        page: this.page,
+        _page: this.page,
+        _limit: 9,
       };
       console.log("fetch");
-      let result = axios.get("https://rickandmortyapi.com/api/character", {
-        params,
-      });
+
+      let result = axios.get(url, { params });
       result.then((response) => {
-        this.characters = response.data.results;
-        this.pages = response.data.info.pages;
+        this.activities = response.data;
         console.log(response.data);
       });
     },
