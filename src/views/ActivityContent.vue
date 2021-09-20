@@ -1,10 +1,17 @@
 <template>
-  <div>
-    <ActivityContentCard v-bind:activity="activity" />
-    <ActivityContentBenefits v-bind:activity="activity" />
-    <ActivityContentRules v-bind:activity="activity" />
-    <ActivityContentOthers v-bind:activity="activity" />
-  </div>
+  <v-app>
+    <v-content>
+      <v-container fluid>
+        <ActivityContentCard
+          v-bind:activity="activity"
+          v-bind:activity_data_json="activity_data_json"
+        />
+        <ActivityContentBenefits v-bind:activity="activity" />
+        <ActivityContentRules v-bind:activity="activity" />
+        <ActivityContentOthers v-bind:activity="activity" />
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -25,13 +32,14 @@ export default {
 
   data() {
     return {
-      activity_data_json: {},
       activity_id: "",
       activity: {},
+      activity_data_json: {},
     };
   },
 
   created() {
+    console.log("ActivityContent created");
     this.activity_id = this.$route.params.id;
     this.fetch();
   },
@@ -42,12 +50,13 @@ export default {
       const path = `/activity/${this.activity_id}`;
       const url = `${BASE_URL}${path}`;
 
+      console.log("fetch en ActivityContent");
       let result = axios.get(url);
       result.then((response) => {
-        this.activity = response.data;
         console.log(response.data);
+        this.activity = response.data;
+        this.activity_data_json = JSON.parse(this.activity.activity);
       });
-      this.scrollToTop();
     },
   },
 };
