@@ -15,26 +15,32 @@
       v-bind:alt="character.name"
     ></v-img>
 
-    <v-card-title class="font-weight-bold">{{ character.name }}</v-card-title>
+    <TitleActivityCard v-bind:character="character" />
 
     <v-card-text>
-      <div class="my-4 text-subtitle-1 font-weight-regular">
-        Italian, Cafe
-      </div>
+      <LocationActivityCard v-bind:character="character" />
 
-      <div>
-        Small plates, salads & sandwiches - an intimate setting with 12 indoor
-        seats plus patio seating.
-      </div>
+      <DescriptionActivityCard v-bind:character="character" />
+
+      <PointsActivityCard v-bind:character="character" />
     </v-card-text>
-
-    <v-card-title class="font-weight-medium">{{ character.name }}</v-card-title>
   </v-card>
 </template>
 
 <script>
+import TitleActivityCard from "../components/TitleActivityCard.vue";
+import LocationActivityCard from "../components/LocationActivityCard.vue";
+import DescriptionActivityCard from "../components/DescriptionActivityCard.vue";
+import PointsActivityCard from "../components/PointsActivityCard.vue";
+
 export default {
   name: "ActivityCard",
   props: ["character"],
+  components: {
+    TitleActivityCard,
+    LocationActivityCard,
+    DescriptionActivityCard,
+    PointsActivityCard,
+  },
 };
 </script>
