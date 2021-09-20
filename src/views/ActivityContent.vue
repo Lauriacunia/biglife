@@ -7,7 +7,7 @@
           v-bind:activity_data_json="activity_data_json"
         />
         <ActivityContentBenefits v-bind:activity="activity_data_json" />
-        <ActivityContentRules v-bind:activity="activity" />
+        <ActivityContentRules v-bind:activity="activity_data_json" />
         <ActivityContentOthers v-bind:activity="activity" />
       </v-container>
     </v-main>
