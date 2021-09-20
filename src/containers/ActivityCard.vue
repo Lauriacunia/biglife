@@ -1,5 +1,11 @@
 <template>
-  <v-card :loading="loading" class="mx-auto my-12" max-width="369" flat>
+  <v-card
+    :loading="loading"
+    class="mx-auto my-12"
+    max-width="369"
+    flat
+    @click="handleClick"
+  >
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
@@ -51,6 +57,12 @@ export default {
   created() {
     this.activity_data_json = JSON.parse(this.activity.activity);
     console.log(this.activity_data_json);
+  },
+
+  methods: {
+    handleClick() {
+      this.$emit("handleClick", this.activity);
+    },
   },
 };
 </script>

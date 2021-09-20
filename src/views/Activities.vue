@@ -7,6 +7,7 @@
             v-for="activity of activities"
             v-bind:key="activity.id"
             v-bind:activity="activity"
+            @handleClick="handleClick"
           />
         </v-layout>
 
@@ -58,11 +59,23 @@ export default {
         this.activities = response.data;
         console.log(response.data);
       });
+      this.scrollToTop();
     },
 
     handlePageChange(value) {
       this.page = value;
       this.fetch();
+    },
+
+    handleClick(activity) {
+      console.log("me hicieron click");
+      console.log(activity);
+      this.$router.push({
+        path: `/actividades/${activity.id}`,
+      });
+    },
+    scrollToTop() {
+      window.scrollTo(0, 0);
     },
   },
 };

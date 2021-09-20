@@ -1,13 +1,23 @@
 <template>
-    <div>
-        <h1>Activity Content</h1>
-        <p>love it</p>
-    </div>
+  <div>
+    <ActivityContentCard v-bind:activity="activity" />
+  </div>
 </template>
 
 <script>
+import ActivityContentCard from "../containers/ActivityContentCard.vue";
 
-export default ({
- 
-})
+export default {
+  name: "ActivityContent",
+  props: ["activity"],
+  components: {
+    ActivityContentCard,
+  },
+
+  data() {
+    return {
+      activity_data_json: {},
+    };
+  },
+};
 </script>
