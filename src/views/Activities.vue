@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-main>
       <v-container grid-list-sm>
         <v-layout row wrap>
           <ActivityCard
@@ -17,7 +17,7 @@
           @handlePageChange="handlePageChange"
         />
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 

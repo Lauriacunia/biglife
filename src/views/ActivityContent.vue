@@ -1,16 +1,16 @@
 <template>
   <v-app>
-    <v-content>
+    <v-main>
       <v-container fluid>
         <ActivityContentCard
           v-bind:activity="activity"
           v-bind:activity_data_json="activity_data_json"
         />
-        <ActivityContentBenefits v-bind:activity="activity" />
+        <ActivityContentBenefits v-bind:activity="activity_data_json" />
         <ActivityContentRules v-bind:activity="activity" />
         <ActivityContentOthers v-bind:activity="activity" />
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 

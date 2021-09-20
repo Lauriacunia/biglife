@@ -9,14 +9,6 @@
     flat
     @click="handleClick"
   >
-    <template slot="progress">
-      <v-progress-linear
-        color="deep-purple"
-        height="10"
-        indeterminate
-      ></v-progress-linear>
-    </template>
-
     <v-img
       width="369"
       height="240"

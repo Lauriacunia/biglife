@@ -5,6 +5,8 @@
         Object.entries(activity_data_json).length != 0 &&
           Object.entries(activity).length != 0
       "
+      class="mx-auto my-12"
+      flat
     >
       <v-row dense>
         <v-col>
