@@ -68,8 +68,6 @@ export default {
     },
 
     handleClick(activity) {
-      console.log("me hicieron click");
-      console.log(activity);
       this.$router.push({
         path: `/actividades/${activity.id}`,
       });

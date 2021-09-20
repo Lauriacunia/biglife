@@ -1,5 +1,5 @@
 <template>
-  <h1>Actividad id:</h1>
+  <h1>Actividad id:{{ activity.id }}</h1>
 </template>
 
 <script>
