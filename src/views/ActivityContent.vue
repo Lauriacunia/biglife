@@ -7,7 +7,10 @@
           v-bind:activity_data_json="activity_data_json"
         />
         <ActivityContentBenefits v-bind:activity="activity_data_json" />
-        <ActivityContentRules v-bind:activity="activity_data_json" />
+        <ActivityContentRules
+          v-bind:activity="activity_data_json"
+          @refresh="refresh"
+        />
         <ActivityContentOthers v-bind:activity="activity" />
       </v-container>
     </v-main>
@@ -56,7 +59,11 @@ export default {
         console.log(response.data);
         this.activity = response.data;
         this.activity_data_json = JSON.parse(this.activity.activity);
+        console.log(this.activity_data_json);
       });
+    },
+    refresh() {
+      this.fetch();
     },
   },
 };
