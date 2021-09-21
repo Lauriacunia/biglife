@@ -9,7 +9,6 @@
           v-bind:key="activity.id"
           v-bind:activity="activity"
           @handleClick="handleClick"
-          @refresh="refresh"
         />
       </v-layout>
     </v-main>
@@ -57,10 +56,10 @@ export default {
       this.$router.push({
         path: `/actividades/${item.id}`,
       });
-      this.refresh();
+      this.scrollToTop();
     },
-    refresh() {
-      this.$emit("refresh", this.activity.id);
+    scrollToTop() {
+      window.scrollTo(0, 0);
     },
   },
 };
