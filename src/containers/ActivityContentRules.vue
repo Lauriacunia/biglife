@@ -1,10 +1,10 @@
 <template>
-  <v-app v-if="Object.entries(activity).length != 0">
-    <v-main>
-      <v-card-title>Reglas</v-card-title>
+  <v-container v-if="Object.entries(activity).length != 0">
+    <v-row>
+      <v-card-title>Reglas:</v-card-title>
       <v-card-text>{{ activity.small_print }}</v-card-text>
-    </v-main>
-  </v-app>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

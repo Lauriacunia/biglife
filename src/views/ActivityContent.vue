@@ -1,23 +1,28 @@
 <template>
-  <v-app>
-    <v-main
-      fluid
-      v-if="
-        Object.entries(activity_data_json).length != 0 &&
-          Object.entries(activity).length != 0 &&
-          benefits.length != 0
-      "
-    >
-      <ActivityContentCard
-        v-bind:activity="activity"
-        v-bind:activity_data_json="activity_data_json"
-      />
+  <v-app
+    v-if="
+      Object.entries(activity_data_json).length != 0 &&
+        Object.entries(activity).length != 0 &&
+        benefits.length != 0
+    "
+  >
+    <v-main>
+      <v-container style="margin-top:100px; border:1px solid black;">
+        <ActivityContentCard
+          v-bind:activity="activity"
+          v-bind:activity_data_json="activity_data_json"
+          class="pa-0 mb-1"
+        />
 
-      <v-card-title>¿Qué incluye?</v-card-title>
-      <div v-html="benefits"></div>
+        <v-card-title class="pa-0 mb-1">¿Qué incluye?</v-card-title>
+        <div class="pa-0 mb-1" v-html="benefits"></div>
 
-      <ActivityContentRules v-bind:activity="activity_data_json" />
-      <ActivityContentOthers v-bind:activity="activity" />
+        <ActivityContentRules
+          class="pa-0 mb-1"
+          v-bind:activity="activity_data_json"
+        />
+        <ActivityContentOthers class="pa-0 mb-1" v-bind:activity="activity" />
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -83,7 +88,7 @@ export default {
       return JSON.parse(str);
     },
     handleStrFormat(str) {
-      return str.replace(/\\n/g, "<br>").replace(/"/g, "<br>");
+      return str.replace(/\\n/g, "").replace(/"/g, "");
     },
   },
 };

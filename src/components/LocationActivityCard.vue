@@ -1,5 +1,5 @@
 <template>
-  <div class="my-4 text-subtitle-1 font-weight-regular">
+  <div class="pa-0">
     {{ activity.locations[0].province }}
   </div>
 </template>

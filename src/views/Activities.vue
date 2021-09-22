@@ -1,21 +1,24 @@
 <template>
   <v-app>
     <v-main>
-      <v-container grid-list-sm>
-        <v-layout row wrap>
+      <v-container style="margin-top:100px; border:1px solid black;">
+        <v-row wrap justify="center">
           <ActivityCard
             v-for="activity of activities"
             v-bind:key="activity.id"
             v-bind:activity="activity"
             @handleClick="handleClick"
           />
-        </v-layout>
-
-        <Paginator
-          :page="page"
-          :pages="pages"
-          @handlePageChange="handlePageChange"
-        />
+        </v-row>
+      </v-container>
+      <v-container>
+        <v-row justify="center mb-16" align="center" style="height=250px;">
+          <Paginator
+            :page="page"
+            :pages="pages"
+            @handlePageChange="handlePageChange"
+          />
+        </v-row>
       </v-container>
     </v-main>
   </v-app>

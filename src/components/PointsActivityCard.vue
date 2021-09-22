@@ -1,7 +1,5 @@
 <template>
-  <v-card-title class="font-weight-bold"
-    >{{ activity.points }} puntos</v-card-title
-  >
+  <v-card-title>{{ activity.points }} puntos</v-card-title>
 </template>
 
 <script>
