@@ -50,14 +50,12 @@ export default {
     console.log("ActivityContent created");
     this.activity_id = this.$route.params.id;
     this.fetch();
-    this.fetchAll();
   },
 
   watch: {
     $route() {
       this.activity_id = this.$route.params.id;
       this.fetch();
-      this.fetchAll();
     },
   },
   methods: {
@@ -71,13 +69,21 @@ export default {
       result.then((response) => {
         console.log(response.data);
         this.activity = response.data;
-        this.activity_data_json = JSON.parse(this.activity.activity);
+        this.activity_data_json = this.convertToJson(this.activity.activity);
         console.log(this.activity_data_json);
-        this.benefits = JSON.stringify(this.activity_data_json.benefits)
-          .replace(/\\n/g, "<br>")
-          .replace(/"/g, "<br>");
-        console.log(this.benefits);
+        this.benefits = this.handleStrFormat(
+          this.convertToString(this.activity_data_json.benefits)
+        );
       });
+    },
+    convertToString(obj) {
+      return JSON.stringify(obj);
+    },
+    convertToJson(str) {
+      return JSON.parse(str);
+    },
+    handleStrFormat(str) {
+      return str.replace(/\\n/g, "<br>").replace(/"/g, "<br>");
     },
   },
 };
