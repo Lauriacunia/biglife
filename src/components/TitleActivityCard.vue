@@ -1,12 +1,19 @@
 <template>
-  <v-card-title class="font-weight-bold pa-0 mb-1" style="font-size:18px;">
-    {{ title }}
-  </v-card-title>
+  <v-container>
+    <v-row class="pa-0">
+      <Title1 v-bind:text="title" />
+    </v-row>
+  </v-container>
 </template>
 
 <script>
+import Title1 from "./typography/Title1.vue";
+
 export default {
   name: "TitleActivityCard",
   props: ["title"],
+  components: {
+    Title1,
+  },
 };
 </script>
