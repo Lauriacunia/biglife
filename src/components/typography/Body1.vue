@@ -1,7 +1,7 @@
 <template>
-  <v-card-text class="font-weight-light pa-0 mb-1" style="font-size:14px; "
-    >{{ text }}
-  </v-card-text>
+  <v-card-title id="body-card" class="font-weight-light pa-0 mb-1 ">{{
+    text
+  }}</v-card-title>
 </template>
 
 <script>
@@ -15,4 +15,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#body-card.body-card {
+  font-size: 14px;
+}
+</style>

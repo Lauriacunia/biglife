@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="pa-0">
-      <Body1 v-bind:text="description" />
+      <Body1 v-bind:text="description" style="line-height: normal;" />
     </v-row>
   </v-container>
 </template>

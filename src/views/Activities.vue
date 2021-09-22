@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <v-container style="margin-top:100px; border:1px solid black;">
+      <v-container style="margin-top:100px;">
         <v-row wrap justify="center">
           <ActivityCard
             v-for="activity of activities"
