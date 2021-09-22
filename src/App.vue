@@ -11,6 +11,9 @@ export default {};
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
+html {
+  scroll-behavior: smooth !important;
+}
 .v-application {
   font-family: "Quicksand", sans-serif !important;
 }
