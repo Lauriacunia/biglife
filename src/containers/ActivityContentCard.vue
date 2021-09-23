@@ -36,6 +36,7 @@
               <LocationActivityCard
                 v-bind:activity="activity_data_json"
                 class="mb-6"
+                :iconSize="2"
               />
               <PointsActivityCard v-bind:activity="activity" />
             </v-card-text>

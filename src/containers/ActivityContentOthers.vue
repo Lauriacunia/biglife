@@ -1,7 +1,7 @@
 <template>
-  <v-app v-if="Object.entries(activity).length != 0">
-    <v-card-title class="mb-8" style="font-size:24px; font-weight:bold;"
-      >Otras actividades similares</v-card-title
+  <v-app class="pa-0" v-if="Object.entries(activity).length != 0">
+    <v-card-title class="pa-0 mb-8" style="font-size:24px; font-weight:bold;"
+      >Otras actividades similares:</v-card-title
     >
 
     <v-main grid-list-sm>

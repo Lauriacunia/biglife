@@ -36,7 +36,10 @@
       </v-card-title>
 
       <v-card-text class="pa-0" align="space-around">
-        <LocationActivityCard v-bind:activity="activity_data_json" />
+        <LocationActivityCard
+          v-bind:activity="activity_data_json"
+          :iconSize="1"
+        />
         <Body1 v-bind:activity="activity_data_json" :font_size="1" />
       </v-card-text>
     </div>

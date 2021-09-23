@@ -15,9 +15,10 @@
           style="margin-bottom: 85px;"
         />
 
-        <v-card-title class="pa-2 mb-8" style="font-size:22px; font-weight:500"
+        <v-card-title class="pa-1 mb-0" style="font-size:22px; font-weight:500"
           >¿Qué incluye?</v-card-title
         >
+        <LineDecorator class="pa-0 mb-6" />
         <div class="pa-2">
           <v-card-text
             class="pa-0 mb-13"
@@ -40,6 +41,7 @@ import axios from "axios";
 import ActivityContentCard from "../containers/ActivityContentCard.vue";
 import ActivityContentRules from "../containers/ActivityContentRules.vue";
 import ActivityContentOthers from "../containers/ActivityContentOthers.vue";
+import LineDecorator from "../components/decorators/LineDecorator.vue";
 
 export default {
   name: "ActivityContent",
@@ -47,6 +49,7 @@ export default {
     ActivityContentCard,
     ActivityContentRules,
     ActivityContentOthers,
+    LineDecorator,
   },
 
   data() {
