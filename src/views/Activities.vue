@@ -2,17 +2,23 @@
   <v-app>
     <v-main>
       <v-container style="margin-top:100px;">
-        <v-row wrap justify="center">
+        <v-row wrap class="center">
           <ActivityCard
             v-for="activity of activities"
             v-bind:key="activity.id"
             v-bind:activity="activity"
+            :cardSize="1"
             @handleClick="handleClick"
           />
         </v-row>
       </v-container>
       <v-container>
-        <v-row justify="center mb-16" align="center" style="height=250px;">
+        <v-row
+          justify="center"
+          class="mb-16"
+          align="center"
+          style="height=250px;"
+        >
           <Paginator
             :page="page"
             :pages="pages"

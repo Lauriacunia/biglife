@@ -5,12 +5,23 @@
         Object.entries(activity).length != 0
     "
     class="pa-3 mb-5 activity-card"
-    max-width="369"
+    v-bind:class="{
+      max_whidth_md: max_whidth_md,
+      max_whidth_sm: max_whidth_sm,
+    }"
     flat
     @click="handleClick"
   >
     <div>
-      <v-container class="pa-0 img-card-container">
+      <v-container
+        class="pa-0"
+        v-bind:class="{
+          img_card_container: img_card_container,
+          img_card_container_small: img_card_container_small,
+          max_whidth_sm: max_whidth_sm,
+          max_whidth_md: max_whidth_md,
+        }"
+      >
         <v-img
           width="369"
           height="240"
@@ -43,7 +54,15 @@ import PointsActivityCard from "../components/PointsActivityCard.vue";
 
 export default {
   name: "ActivityCard",
-  props: ["activity"],
+  props: {
+    activity: {
+      type: Object,
+    },
+    cardSize: {
+      type: Number,
+    },
+  },
+
   components: {
     TitleActivityCard,
     LocationActivityCard,
@@ -53,17 +72,35 @@ export default {
   data() {
     return {
       activity_data_json: {},
+      img_card_container: false,
+      img_card_container_small: false,
+      max_whidth_sm: false,
+      max_whidth_md: false,
     };
   },
 
   created() {
     this.activity_data_json = JSON.parse(this.activity.activity);
     console.log(this.activity_data_json);
+    console.log(this.cardSize);
+    this.setCardSize();
   },
 
   methods: {
     handleClick() {
       this.$emit("handleClick", this.activity);
+    },
+    setCardSize() {
+      if (this.cardSize == 1) {
+        this.img_card_container = true;
+        this.max_whidth_md = true;
+      } else if (this.cardSize == 2) {
+        this.img_card_container_small = true;
+        this.max_whidth_sm = true;
+      } else {
+        this.img_card_container = true;
+        this.max_whidth_md = true;
+      }
     },
   },
 };
@@ -75,17 +112,29 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-.img-card-container {
+.img_card_container {
   width: 369px;
   height: 240px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.img_card_container_small {
+  width: 271px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
 
 .img-card {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   border-radius: 4px;
+}
+.max_whidth_md {
+  width: 369px;
+}
+.max_whidth_sm {
+  width: 271px;
 }
 </style>

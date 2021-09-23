@@ -18,7 +18,7 @@
           />
         </v-col>
         <v-col>
-          <div class="d-flex flex-no-wrap justify-space-between">
+          <div class="d-flex flex-no-wrap ">
             <div>
               <v-card-text>
                 <TitleActivityCard v-bind:activity="activity" />

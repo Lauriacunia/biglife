@@ -8,7 +8,9 @@
           v-for="activity of activities"
           v-bind:key="activity.id"
           v-bind:activity="activity"
+          :cardSize="2"
           @handleClick="handleClick"
+          style="max-whidth: 271px;"
         />
       </v-layout>
     </v-main>
