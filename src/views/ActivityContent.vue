@@ -11,12 +11,20 @@
         <ActivityContentCard
           v-bind:activity="activity"
           v-bind:activity_data_json="activity_data_json"
-          class="pa-0 mb-1"
+          class="pa-0"
+          style="margin-bottom: 85px;"
         />
 
-        <v-card-title class="pa-0 mb-1">¿Qué incluye?</v-card-title>
-        <div class="pa-0 mb-1" v-html="benefits"></div>
-
+        <v-card-title class="pa-2 mb-8" style="font-size:22px; font-weight:500"
+          >¿Qué incluye?</v-card-title
+        >
+        <div class="pa-2">
+          <v-card-text
+            class="pa-0 mb-1"
+            style="font-size:18px; font-weight:300"
+            v-html="benefits"
+          ></v-card-text>
+        </div>
         <ActivityContentRules
           class="pa-0 mb-1"
           v-bind:activity="activity_data_json"
@@ -93,3 +101,5 @@ export default {
   },
 };
 </script>
+
+<style scoped></style>
