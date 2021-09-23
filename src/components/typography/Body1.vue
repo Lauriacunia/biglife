@@ -28,8 +28,6 @@ export default {
     };
   },
   created() {
-    console.log("created body1");
-    console.log("font_size", this.font_size);
     this.setFontSize();
   },
   methods: {

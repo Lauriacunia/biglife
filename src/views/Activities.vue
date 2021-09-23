@@ -61,12 +61,10 @@ export default {
         _page: this.page,
         _limit: 9,
       };
-      console.log("fetch");
 
       let result = axios.get(url, { params });
       result.then((response) => {
         this.activities = response.data;
-        console.log(response.data);
       });
       this.scrollToTop();
     },

@@ -24,8 +24,6 @@ export default {
     };
   },
   created() {
-    console.log("created title1");
-    console.log("font_size", this.font_size);
     this.setFontSize();
   },
   methods: {

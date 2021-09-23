@@ -1,13 +1,7 @@
 <template>
   <v-card-title class="font-weight-bold pa-0">
-    <v-img
-      max-height="15"
-      max-width="24"
-      justify="center"
-      aling="center"
-      v-bind:src="icon"
-      class="mr-3"
-    ></v-img>
+    <OnePersonIcon v-if="isOne" />
+    <TwoPersonsIcon v-if="!isOne" />
     <span style="font-size:16px; font-weight:normal;"
       >Para {{ activity.participants }} {{ text }}</span
     >
@@ -15,18 +9,20 @@
 </template>
 
 <script>
+import OnePersonIcon from "./icons/OnePersonIcon.vue";
+import TwoPersonsIcon from "./icons/TwoPersonsIcon.vue";
+
 export default {
   name: "ParticipantsActivityCard",
   props: ["activity"],
+  components: {
+    OnePersonIcon,
+    TwoPersonsIcon,
+  },
   data() {
     return {
       isOne: false,
-      icon1:
-        "https://user-images.githubusercontent.com/63796774/134558077-eff828e0-76df-477a-aace-485e48dfb359.png",
-      icon2:
-        "https://user-images.githubusercontent.com/63796774/134557846-44d17341-aeab-4f40-986e-099f02e23262.png",
       text: "personas",
-      icon: "",
     };
   },
   created() {
@@ -44,14 +40,11 @@ export default {
     setContent() {
       if (this.activity.participants === 1) {
         this.isOne = true;
-        this.icon = this.icon1;
         this.text = "persona";
       } else if (this.activity.participants > 1) {
         this.isOne = false;
-        this.icon = this.icon2;
         this.text = "personas";
       } else {
-        this.icon = this.icon2;
         this.text = "personas";
       }
     },

@@ -8,9 +8,6 @@
 <script>
 export default {
   name: "LineDecorator",
-  created() {
-    console.log("Line created");
-  },
 };
 </script>
 

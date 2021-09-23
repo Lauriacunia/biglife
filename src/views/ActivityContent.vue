@@ -7,7 +7,7 @@
     "
   >
     <v-main>
-      <v-container style="margin-top:100px; border:1px solid black;">
+      <v-container style="margin-top:100px;">
         <ActivityContentCard
           v-bind:activity="activity"
           v-bind:activity_data_json="activity_data_json"
@@ -63,7 +63,6 @@ export default {
   },
 
   created() {
-    console.log("ActivityContent created");
     this.activity_id = this.$route.params.id;
     this.fetch();
   },
@@ -80,13 +79,10 @@ export default {
       const path = `/activity/${this.activity_id}`;
       const url = `${BASE_URL}${path}`;
 
-      console.log("fetch en ActivityContent");
       let result = axios.get(url);
       result.then((response) => {
-        console.log(response.data);
         this.activity = response.data;
         this.activity_data_json = this.convertToJson(this.activity.activity);
-        console.log(this.activity_data_json);
         this.benefits = this.handleStrFormat(
           this.convertToString(this.activity_data_json.benefits)
         );

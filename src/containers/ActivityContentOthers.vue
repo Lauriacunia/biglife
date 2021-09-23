@@ -48,12 +48,10 @@ export default {
         _page: 1,
         _limit: 4,
       };
-      console.log("fetch");
 
       let result = axios.get(url, { params });
       result.then((response) => {
         this.activities = response.data;
-        console.log(response.data);
       });
     },
     handleClick(item) {

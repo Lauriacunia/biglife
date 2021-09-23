@@ -4,7 +4,7 @@
       Object.entries(activity_data_json).length != 0 &&
         Object.entries(activity).length != 0
     "
-    class="pa-3 mb-5 activity-card"
+    class="ma-3 activity-card"
     v-bind:class="{
       max_whidth_md: max_whidth_md,
       max_whidth_sm: max_whidth_sm,
@@ -12,7 +12,7 @@
     flat
     @click="handleClick"
   >
-    <div>
+    <div class="pa-0">
       <v-container
         class="pa-0"
         v-bind:class="{
@@ -23,17 +23,17 @@
         }"
       >
         <v-img
-          width="369"
-          height="240"
           v-bind:src="activity_data_json.image[0]"
           v-bind:alt="activity.title"
           class="mb-3 img-card"
         ></v-img>
       </v-container>
 
-      <v-card-title class="pa-0">
-        <TitleActivityCard v-bind:title="activity.title" />
-      </v-card-title>
+      <TitleActivityCard
+        v-bind:activity="activity"
+        v-bind:activityJson="activity_data_json"
+        :cardSize="cardSize"
+      />
 
       <v-card-text class="pa-0" align="space-around">
         <LocationActivityCard
@@ -84,7 +84,6 @@ export default {
 
   created() {
     this.activity_data_json = JSON.parse(this.activity.activity);
-    console.log(this.activity_data_json);
     this.setCardSize();
   },
 

@@ -20,8 +20,6 @@ export default {
   },
   methods: {
     handlePageChange() {
-      //console.log('evento');
-      // emit recibe 2 parametros: 1 el nombre identificador 2 lo que le enviamos al padre
       this.$emit("handlePageChange", this.page);
     },
   },
