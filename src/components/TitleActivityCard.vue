@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="pa-0">
-      <Title1 v-bind:text="title" />
+      <Title1 v-bind:text="title" :font_size="1" />
     </v-row>
   </v-container>
 </template>

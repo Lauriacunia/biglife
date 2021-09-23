@@ -10,25 +10,35 @@
     >
       <v-row dense>
         <v-col>
-          <Carrousel
-            width="369"
-            height="240"
+          <Carousel
             v-bind:images="activity_data_json.image"
+            style="max-width: 563px; height: 371px;"
           />
         </v-col>
         <v-col>
-          <div class="d-flex flex-no-wrap ">
-            <div>
-              <v-card-text>
-                <TitleActivityCard v-bind:activity="activity" />
-                <DescriptionActivityCard v-bind:activity="activity_data_json" />
-                <ParticipantsActivityCard
-                  v-bind:activity="activity_data_json"
-                />
-                <LocationActivityCard v-bind:activity="activity_data_json" />
-                <PointsActivityCard v-bind:activity="activity" />
-              </v-card-text>
-            </div>
+          <div class="d-flex flex-no-wrap">
+            <v-card-text class="pa-0">
+              <Title1
+                v-bind:text="activity.title"
+                :font_size="2"
+                class="mb-3"
+              />
+              <Body1
+                v-bind:activity="activity_data_json"
+                style="line-height: normal;"
+                :font_size="2"
+                class="mb-3"
+              />
+              <ParticipantsActivityCard
+                v-bind:activity="activity_data_json"
+                class="pa-0 mb-3"
+              />
+              <LocationActivityCard
+                v-bind:activity="activity_data_json"
+                class="mb-6"
+              />
+              <PointsActivityCard v-bind:activity="activity" />
+            </v-card-text>
           </div>
         </v-col>
       </v-row>
@@ -37,23 +47,23 @@
 </template>
 
 <script>
-import TitleActivityCard from "../components/TitleActivityCard.vue";
+import Title1 from "../components/typography/Title1.vue";
 import LocationActivityCard from "../components/LocationActivityCard.vue";
-import DescriptionActivityCard from "../components/DescriptionActivityCard.vue";
+import Body1 from "../components/typography/Body1.vue";
 import ParticipantsActivityCard from "../components/ParticipantsActivityCard.vue";
 import PointsActivityCard from "../components/PointsActivityCard.vue";
-import Carrousel from "../components/Carrousel.vue";
+import Carousel from "../components/Carousel.vue";
 
 export default {
   name: "ActivityContentCard",
   props: ["activity", "activity_data_json"],
   components: {
-    TitleActivityCard,
+    Title1,
     LocationActivityCard,
-    DescriptionActivityCard,
+    Body1,
     ParticipantsActivityCard,
     PointsActivityCard,
-    Carrousel,
+    Carousel,
   },
 };
 </script>

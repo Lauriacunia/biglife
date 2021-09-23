@@ -12,9 +12,10 @@
 
 <script>
 export default {
-  name: "Carrousel",
   props: {
-    images: [],
+    images: {
+      type: Array,
+    },
   },
 };
 </script>

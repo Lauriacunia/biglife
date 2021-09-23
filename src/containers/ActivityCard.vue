@@ -37,7 +37,7 @@
 
       <v-card-text class="pa-0" align="space-around">
         <LocationActivityCard v-bind:activity="activity_data_json" />
-        <DescriptionActivityCard v-bind:activity="activity_data_json" />
+        <Body1 v-bind:activity="activity_data_json" :font_size="1" />
       </v-card-text>
     </div>
     <v-card-text class="pa-0">
@@ -49,7 +49,7 @@
 <script>
 import TitleActivityCard from "../components/TitleActivityCard.vue";
 import LocationActivityCard from "../components/LocationActivityCard.vue";
-import DescriptionActivityCard from "../components/DescriptionActivityCard.vue";
+import Body1 from "../components/typography/Body1.vue";
 import PointsActivityCard from "../components/PointsActivityCard.vue";
 
 export default {
@@ -66,7 +66,7 @@ export default {
   components: {
     TitleActivityCard,
     LocationActivityCard,
-    DescriptionActivityCard,
+    Body1,
     PointsActivityCard,
   },
   data() {
@@ -82,7 +82,6 @@ export default {
   created() {
     this.activity_data_json = JSON.parse(this.activity.activity);
     console.log(this.activity_data_json);
-    console.log(this.cardSize);
     this.setCardSize();
   },
 
