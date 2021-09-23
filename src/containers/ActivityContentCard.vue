@@ -10,11 +10,10 @@
     >
       <v-row dense>
         <v-col>
-          <v-img
+          <Carrousel
             width="369"
             height="240"
-            v-bind:src="activity_data_json.image[0]"
-            v-bind:alt="activity.title"
+            v-bind:images="activity_data_json.image"
           />
         </v-col>
         <v-col>
@@ -43,6 +42,7 @@ import LocationActivityCard from "../components/LocationActivityCard.vue";
 import DescriptionActivityCard from "../components/DescriptionActivityCard.vue";
 import ParticipantsActivityCard from "../components/ParticipantsActivityCard.vue";
 import PointsActivityCard from "../components/PointsActivityCard.vue";
+import Carrousel from "../components/Carrousel.vue";
 
 export default {
   name: "ActivityContentCard",
@@ -53,6 +53,7 @@ export default {
     DescriptionActivityCard,
     ParticipantsActivityCard,
     PointsActivityCard,
+    Carrousel,
   },
 };
 </script>
