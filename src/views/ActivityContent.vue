@@ -20,13 +20,13 @@
         >
         <div class="pa-2">
           <v-card-text
-            class="pa-0 mb-1"
-            style="font-size:18px; font-weight:300"
+            class="pa-0 mb-13"
+            style="font-size:18px; font-weight:300; width:564px;"
             v-html="benefits"
           ></v-card-text>
         </div>
         <ActivityContentRules
-          class="pa-0 mb-1"
+          class="pa-0 mb-13"
           v-bind:activity="activity_data_json"
         />
         <ActivityContentOthers class="pa-0 mb-1" v-bind:activity="activity" />

@@ -17,4 +17,7 @@ html {
 .v-application {
   font-family: "Quicksand", sans-serif !important;
 }
+.v-application p {
+  margin-top: 22px;
+}
 </style>

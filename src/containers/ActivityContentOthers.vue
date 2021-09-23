@@ -1,9 +1,11 @@
 <template>
   <v-app v-if="Object.entries(activity).length != 0">
-    <v-card-title>Otras actividades similares</v-card-title>
+    <v-card-title class="mb-8" style="font-size:24px; font-weight:bold;"
+      >Otras actividades similares</v-card-title
+    >
 
     <v-main grid-list-sm>
-      <v-layout row wrap>
+      <v-layout class="pa-0" row wrap>
         <ActivityCard
           v-for="activity of activities"
           v-bind:key="activity.id"

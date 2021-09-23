@@ -16,18 +16,18 @@
           />
         </v-col>
         <v-col>
-          <div class="d-flex flex-no-wrap">
+          <div class="d-flex flex-no-wrap pa-0">
             <v-card-text class="pa-0">
               <Title1
                 v-bind:text="activity.title"
                 :font_size="2"
-                class="mb-3"
+                class="mb-3 pa-0"
               />
               <Body1
                 v-bind:activity="activity_data_json"
-                style="line-height: normal;"
+                style="line-height: normal; width: 466px;"
                 :font_size="2"
-                class="mb-3"
+                class="mb-3 pa-0"
               />
               <ParticipantsActivityCard
                 v-bind:activity="activity_data_json"

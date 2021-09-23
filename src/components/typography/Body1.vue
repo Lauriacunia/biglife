@@ -1,17 +1,13 @@
 <template>
-  <v-container>
-    <v-row class="pa-0">
-      <v-card-title
-        v-bind:class="{
-          font_size_sm: font_size_sm,
-          font_size_md: font_size_md,
-        }"
-        class="font-weight-light pa-0 mb-1 "
-        style="line-height: normal;"
-        >{{ activity.description }}</v-card-title
-      >
-    </v-row>
-  </v-container>
+  <v-card-title
+    v-bind:class="{
+      font_size_sm: font_size_sm,
+      font_size_md: font_size_md,
+    }"
+    class="font-weight-light pa-0 mb-1 "
+    style="line-height: normal;"
+    >{{ activity.description }}</v-card-title
+  >
 </template>
 
 <script>

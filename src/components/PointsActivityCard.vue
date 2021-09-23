@@ -18,10 +18,16 @@ export default {
   data() {
     return {
       points: "",
+      text: "",
     };
   },
   created() {
-    this.points = this.activity.points + " puntos ";
+    if (this.activity.points == 1) {
+      this.text = "punto";
+    } else {
+      this.text = "puntos";
+    }
+    this.points = this.activity.points + " " + this.text;
   },
 };
 </script>
