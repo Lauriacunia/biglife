@@ -7,7 +7,8 @@
     "
   >
     <v-main>
-      <v-container style="margin-top:100px;">
+      <v-container style="margin-top:40px;">
+        <ArrowBack />
         <ActivityContentCard
           v-bind:activity="activity"
           v-bind:activity_data_json="activity_data_json"
@@ -42,6 +43,7 @@ import ActivityContentCard from "../containers/ActivityContentCard.vue";
 import ActivityContentRules from "../containers/ActivityContentRules.vue";
 import ActivityContentOthers from "../containers/ActivityContentOthers.vue";
 import LineDecorator from "../components/decorators/LineDecorator.vue";
+import ArrowBack from "../components/icons/ArrowBack.vue";
 
 export default {
   name: "ActivityContent",
@@ -50,6 +52,7 @@ export default {
     ActivityContentRules,
     ActivityContentOthers,
     LineDecorator,
+    ArrowBack,
   },
 
   data() {
