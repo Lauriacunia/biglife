@@ -17,6 +17,7 @@ export default {
   methods: {
     back() {
       this.$router.go(-1);
+      window.scrollTo(0, 0);
     },
   },
 };
