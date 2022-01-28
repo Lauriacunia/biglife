@@ -1,24 +1,22 @@
-# test
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/63796774/151593182-97af9e45-632d-41aa-b6f7-128018ea2180.png">
+</p>
 
-## Project setup
-```
-npm install
-```
+## Funcionalidad
+- [x] Website - e-commerce de experiencias y servicios. 
+# Deploy
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+[Te invito a conocer el sitio](https://biglife.netlify.app/actividades)
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Construído con…
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [x] Vue Js
+- [x] Javascript
+- [x] Material UI
+- [x] Axios
+
+
+## Contacto
+
+[LinkeIn](https://www.linkedin.com/in/lauriacunia/)
