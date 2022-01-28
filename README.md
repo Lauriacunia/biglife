@@ -3,7 +3,7 @@
 </p>
 
 ## Funcionalidad
-- [x] Website - e-commerce de experiencias y servicios. 
+- [x] Website - Single page application - e-commerce de experiencias y servicios. 
 # Deploy
 
 [Te invito a conocer el sitio](https://biglife.netlify.app/actividades)
@@ -13,7 +13,7 @@
 
 - [x] Vue Js
 - [x] Javascript
-- [x] Material UI
+- [x] Vuetify
 - [x] Axios
 
 
